@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { InputModalComponent } from '../input-modal/input-modal.component';
+import { FunctionsService } from './../functions.service';
 
 @Component({
   selector: 'app-menu',
@@ -7,9 +7,12 @@ import { InputModalComponent } from '../input-modal/input-modal.component';
   styleUrls: ['./menu.component.css'],
 })
 export class MenuComponent implements OnInit {
-  constructor() {}
+  constructor(public functionService: FunctionsService) {}
 
   ngOnInit(): void {}
 
-  create(): any {}
+  onOpenInputModal(color: string, type: string) {
+    this.functionService.showInputModal = true;
+    this.functionService.openInputModal(color, type);
+  }
 }

@@ -1,4 +1,12 @@
 <div>
-  <h1>MENU</h1>
-  <button (click)="create()">Create Player</button>
+  <h1>Create a Combatant</h1>
+  <div class="button-container">
+    <button (click)="onOpenInputModal('Green', 'Player')">Create Player</button>
+    <button (click)="onOpenInputModal('Red', 'Monster')">Create Monster</button>
+    <button (click)="onOpenInputModal('Blue', 'NPC')">Create NPC</button>
+  </div>
 </div>
+<app-input-modal
+  id="input-modal"
+  *ngIf="functionService.showInputModal"
+></app-input-modal>

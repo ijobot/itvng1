@@ -20,28 +20,20 @@
 
 #menu {
   grid-area: menu;
+  background-color: rgb(7, 7, 75);
+  text-align: center;
+  padding: 2rem;
 }
 
 #combat-list {
   grid-area: combat-list;
+  padding: 2rem;
 }
 
 #title,
-#menu,
-#combat-list,
-#input-modal {
+#combat-list {
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: rgb(7, 7, 75);
-}
-
-#input-modal {
-  position: absolute;
-  height: 300px;
-  width: 500px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  box-shadow: 0 0 0 1000px rgba(0, 0, 0, 0.6);
 }

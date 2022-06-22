@@ -1,9 +1,21 @@
 <div>
   <h1>Create a Combatant</h1>
   <div class="button-container">
-    <button (click)="onOpenInputModal('Green', 'Player')">Create Player</button>
-    <button (click)="onOpenInputModal('Red', 'Monster')">Create Monster</button>
-    <button (click)="onOpenInputModal('Blue', 'NPC')">Create NPC</button>
+    <app-button
+      color="green"
+      text="Create Player"
+      (buttonClick)="functionService.openModalWithPresetValues()"
+    ></app-button>
+    <app-button
+      color="red"
+      text="Create Monster"
+      (buttonClick)="functionService.openModalWithPresetValues()"
+    ></app-button>
+    <app-button
+      color="blue"
+      text="Create NPC"
+      (buttonClick)="functionService.openModalWithPresetValues()"
+    ></app-button>
   </div>
 </div>
 <app-input-modal

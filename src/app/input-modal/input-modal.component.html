@@ -1,7 +1,21 @@
 <div class="container">
-  <input type="text" class="enter-name" placeholder="Enter Name" />
-  <input type="text" class="enter-score" placeholder="Enter Score" />
-  <input type="text" class="enter-ac" placeholder="Enter AC" />
-  <button class="cancel" (click)="onCloseModal()">Cancel</button>
-  <button class="submit" (click)="onCloseModal()">Submit</button>
+  <div class="flex" id="name">
+    <input type="text" placeholder="Enter Name" />
+  </div>
+
+  <div class="flex" id="score">
+    <input type="text" placeholder="Enter Score" />
+  </div>
+
+  <div class="flex" id="ac">
+    <input type="text" placeholder="Enter AC" />
+  </div>
+
+  <div class="flex" id="cancel">
+    <button (click)="onCloseModal()">Cancel</button>
+  </div>
+
+  <div class="flex" id="submit">
+    <button (click)="onCloseModal()">Submit</button>
+  </div>
 </div>

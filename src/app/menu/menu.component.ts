@@ -10,9 +10,4 @@ export class MenuComponent implements OnInit {
   constructor(public functionService: FunctionsService) {}
 
   ngOnInit(): void {}
-
-  onOpenInputModal(color: string, type: string) {
-    this.functionService.showInputModal = true;
-    this.functionService.openInputModal(color, type);
-  }
 }

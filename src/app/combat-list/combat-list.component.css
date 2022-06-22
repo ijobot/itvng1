@@ -1,0 +1,15 @@
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+.temp-list {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  font-size: 2rem;
+}
+
+.temp-list > p:not(:first-of-type) {
+  margin-left: 10px;
+}

@@ -9,6 +9,7 @@ import { InputModalComponent } from './input-modal/input-modal.component';
 import { DropDownNameComponent } from './drop-down-name/drop-down-name.component';
 import { DropDownTypeComponent } from './drop-down-type/drop-down-type.component';
 import { DropDownScoreComponent } from './drop-down-score/drop-down-score.component';
+import { ButtonComponent } from './button/button.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { DropDownScoreComponent } from './drop-down-score/drop-down-score.compon
     InputModalComponent,
     DropDownNameComponent,
     DropDownTypeComponent,
-    DropDownScoreComponent
+    DropDownScoreComponent,
+    ButtonComponent
   ],
   imports: [
     BrowserModule

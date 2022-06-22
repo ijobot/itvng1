@@ -14,7 +14,12 @@ export class FunctionsService {
   constructor() {}
 
   openModalWithPresetValues(): void {
-    console.log('LOGGER: openModalWithPresetValues()');
+    console.log('LOGGER: openModalWithPresetValues(), functions.service');
     this.showInputModal = true;
+  }
+
+  closeModal(): void {
+    console.log('LOGGER: closeModal(), functions.service');
+    this.showInputModal = false;
   }
 }

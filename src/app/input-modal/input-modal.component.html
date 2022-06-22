@@ -12,7 +12,11 @@
   </div>
 
   <div class="flex" id="cancel">
-    <button (click)="onCloseModal()">Cancel</button>
+    <app-button
+      color="grey"
+      text="Cancel"
+      (buttonClick)="functionService.closeModal()"
+    ></app-button>
   </div>
 
   <div class="flex" id="submit">

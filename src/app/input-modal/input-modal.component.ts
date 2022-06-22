@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { FunctionsService } from '../functions.service';
 import { CombatantsService } from '../combatants.service';
 import { Combatant } from '../combatant';
@@ -46,6 +47,7 @@ export class InputModalComponent implements OnInit {
 
 
   onCloseModal(): void {
+    console.log('LOGGER: onCloseModal(), input-modal.component');
     this.functionService.showInputModal = false;
     console.log('LOGGER: onCloseModal() Triggered')
     this.pushCombatantData()

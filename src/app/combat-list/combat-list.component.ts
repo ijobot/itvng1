@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Combatant } from '../combatant';
 import { MockCombatants } from '../mock-combatants';
+import { CombatantsService } from '../combatants.service';
 
 @Component({
   selector: 'app-combat-list',
@@ -8,9 +9,9 @@ import { MockCombatants } from '../mock-combatants';
   styleUrls: ['./combat-list.component.css'],
 })
 export class CombatListComponent implements OnInit {
-  combatants: Combatant[] = MockCombatants;
+  combatants: Combatant[] = this.combatantsService.combatantsArray;
 
-  constructor() {}
+  constructor(public combatantsService : CombatantsService) {}
 
   ngOnInit(): void {}
 }

@@ -10,7 +10,7 @@ export class Combatant {
     score: number,
     type: string,
     color: string,
-    ac: number
+    ac: number | string
   ) {
     this.name = name;
     this.score = score;

@@ -14,6 +14,4 @@ export class InputModalComponent implements OnInit {
   onCloseModal(): void {
     this.functionService.showInputModal = false;
   }
-
-  acceptCombatantPresets(): void {}
 }

@@ -3,7 +3,7 @@ export class Combatant {
   public score: number;
   public type: string;
   public color: string;
-  public ac: number;
+  public ac: number | string;
 
   constructor(
     name: string,

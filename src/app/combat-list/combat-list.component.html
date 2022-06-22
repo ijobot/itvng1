@@ -1,1 +1,9 @@
-<h1>COMBAT LIST</h1>
+<ul>
+  <li *ngFor="let combatant of combatants" class="temp-list">
+    <p>{{ combatant.name }}</p>
+    <p>{{ combatant.type }}</p>
+    <p>{{ combatant.score }}</p>
+    <p>{{ combatant.color }}</p>
+    <p>{{ combatant.ac }}</p>
+  </li>
+</ul>

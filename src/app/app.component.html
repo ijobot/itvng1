@@ -2,4 +2,8 @@
   <app-title id="title"></app-title>
   <app-menu id="menu"></app-menu>
   <app-combat-list id="combat-list"></app-combat-list>
+  <app-input-modal
+    id="input-modal"
+    *ngIf="functionService.showInputModal"
+  ></app-input-modal>
 </div>

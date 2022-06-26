@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import { Combatant } from '../combatant';
-import { MockCombatants } from '../mock-combatants';
-import { CombatantsService } from '../combatants.service';
+import { CombatantService } from '../combatant.service';
+import { CombatEntryComponent } from './../combat-entry/combat-entry.component';
 
 @Component({
   selector: 'app-combat-list',
@@ -9,9 +9,11 @@ import { CombatantsService } from '../combatants.service';
   styleUrls: ['./combat-list.component.css'],
 })
 export class CombatListComponent implements OnInit {
-  combatants: Combatant[] = this.combatantsService.combatantsArray;
+  @Output() combatants: Combatant[] = this.combatantService.combatantsArray;
 
-  constructor(public combatantsService : CombatantsService) {}
+  constructor(public combatantService: CombatantService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    console.log('LOGGER: ngOnInit(), combat-list.component');
+  }
 }

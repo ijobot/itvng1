@@ -10,6 +10,7 @@ import { DropDownNameComponent } from './drop-down-name/drop-down-name.component
 import { DropDownTypeComponent } from './drop-down-type/drop-down-type.component';
 import { DropDownScoreComponent } from './drop-down-score/drop-down-score.component';
 import { ButtonComponent } from './button/button.component';
+import { CombatEntryComponent } from './combat-entry/combat-entry.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { ButtonComponent } from './button/button.component';
     DropDownNameComponent,
     DropDownTypeComponent,
     DropDownScoreComponent,
-    ButtonComponent
+    ButtonComponent,
+    CombatEntryComponent
   ],
   imports: [
     BrowserModule

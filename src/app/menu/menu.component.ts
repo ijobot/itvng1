@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FunctionsService } from './../functions.service';
-import { CombatantsService } from '../combatants.service';
+import { FunctionService } from '../function.service';
+import { CombatantService } from '../combatant.service';
+import { ButtonComponent } from '../button/button.component';
 
 @Component({
   selector: 'app-menu',
@@ -8,11 +9,10 @@ import { CombatantsService } from '../combatants.service';
   styleUrls: ['./menu.component.css'],
 })
 export class MenuComponent implements OnInit {
-  constructor(public functionService: FunctionsService, public combatantsService: CombatantsService) {}
-
-  // callTest(): void {
-  //   console.log(this.combatantsService.combatantsArray[0].name)
-  // }
+  constructor(
+    public functionService: FunctionService,
+    public combatantService: CombatantService
+  ) {}
 
   ngOnInit(): void {}
 }

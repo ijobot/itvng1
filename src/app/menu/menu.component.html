@@ -1,25 +1,39 @@
-<div>
+<div class="button-container">
   <h1>Create a Combatant</h1>
-  <div class="button-container">
-    <app-button
-      color="green"
-      text="Create Player"
-      (buttonClick)="functionService.openModalWithPresetValues()"
-    ></app-button>
-    <app-button
-      color="red"
-      text="Create Monster"
-      (buttonClick)="functionService.openModalWithPresetValues()"
-    ></app-button>
-    <app-button
-      color="blue"
-      text="Create NPC"
-      (buttonClick)="functionService.openModalWithPresetValues()"
-    ></app-button>
-    <!-- <button (click)="callTest()"></button> -->
-  </div>
+  <app-button
+    class="menu-button"
+    width="100%"
+    height="60px"
+    color="green"
+    text="Player"
+    fontSize="2rem"
+    (buttonClick)="functionService.openModalWithPresets('green', 'Player')"
+  ></app-button>
+  <app-button
+    class="menu-button"
+    width="100%"
+    height="60px"
+    color="red"
+    text="Monster"
+    fontSize="2rem"
+    (buttonClick)="functionService.openModalWithPresets('red', 'Monster')"
+  ></app-button>
+  <app-button
+    class="menu-button"
+    width="100%"
+    height="60px"
+    color="blue"
+    text="NPC"
+    fontSize="2rem"
+    (buttonClick)="functionService.openModalWithPresets('blue', 'NPC')"
+  ></app-button>
+  <app-button
+    class="menu-button"
+    width="100%"
+    height="60px"
+    color="grey"
+    text="Clear Combatants"
+    fontSize="2rem"
+    (buttonClick)="combatantService.clearCombatants()"
+  ></app-button>
 </div>
-<app-input-modal
-  id="input-modal"
-  *ngIf="functionService.showInputModal"
-></app-input-modal>

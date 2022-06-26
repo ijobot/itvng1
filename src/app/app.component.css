@@ -22,18 +22,30 @@
   grid-area: menu;
   background-color: rgb(7, 7, 75);
   text-align: center;
-  padding: 2rem;
 }
 
 #combat-list {
   grid-area: combat-list;
-  padding: 2rem;
+  background-color: rgb(7, 7, 75);
 }
 
-#title,
-#combat-list {
+#title {
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: rgb(7, 7, 75);
+}
+
+#input-modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#title,
+#menu,
+#combat-list,
+#input-modal {
+  padding: 1rem;
 }

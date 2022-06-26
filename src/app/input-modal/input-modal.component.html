@@ -1,4 +1,5 @@
-<div class="container">
+<div class="container" [ngStyle]="{ 'background-color': modalColor }">
+  <h1 id="combatant-type">{{ functionService.combatantType }}</h1>
   <div class="flex" id="name">
     <input type="text" placeholder="Enter Name" />
   </div>
@@ -15,11 +16,19 @@
     <app-button
       color="grey"
       text="Cancel"
-      (buttonClick)="functionService.closeModal()"
+      width="max-content"
+      height="auto"
+      (buttonClick)="onCloseModal()"
     ></app-button>
   </div>
 
   <div class="flex" id="submit">
-    <button (click)="onCloseModal()">Submit</button>
+    <app-button
+      color="grey"
+      text="Submit"
+      width="auto"
+      height="60px"
+      (buttonClick)="onCloseModal()"
+    ></app-button>
   </div>
 </div>

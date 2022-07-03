@@ -1,6 +1,6 @@
 .single-entry-container {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr min-content;
+  grid-template-columns: 1fr 1fr 1fr 1fr 50px;
   grid-template-areas: "type name ac score delete";
   padding: 0.5rem;
   gap: 0.5rem;
@@ -31,5 +31,11 @@
 .ac,
 .score,
 .delete {
+  font-size: 2rem;
+}
+
+:host ::ng-deep button {
+  width: 100%;
+  height: 50px;
   font-size: 2rem;
 }

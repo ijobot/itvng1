@@ -1,3 +1,4 @@
+import { NoopAnimationPlayer } from '@angular/animations';
 import { Injectable } from '@angular/core';
 import { Combatant } from './combatant';
 
@@ -16,26 +17,22 @@ export class CombatantService {
     });
   }
 
-  pushCombatantData(): void {
-    console.log('LOGGER: pushCombatantData(), input-modal.component');
-    this.combatantsArray.push(
-      {
-        name: 'Joe',
-        type: 'Player',
-        score: 15,
-        color: 'green',
-        ac: 14,
-      } as Combatant,
-      {
-        name: 'Jack',
-        type: 'Player',
-        score: 18,
-        color: 'green',
-        ac: 16,
-      } as Combatant
-    );
+  createCombatant(
+    name: string,
+    score: number,
+    ac: number,
+    type: string,
+    color: string
+  ): void {
+    console.log('LOGGER: createCombatant(), combatant.service');
+    this.combatantsArray.push({
+      name: name,
+      type: type,
+      score: score,
+      color: color,
+      ac: ac,
+    });
     this.sortCombatantList();
-    console.log('LOGGER: combatantsArray = ', this.combatantsArray);
   }
 
   clearCombatants(): void {

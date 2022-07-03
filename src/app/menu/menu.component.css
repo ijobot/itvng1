@@ -9,9 +9,15 @@
 }
 
 app-button {
-  min-width: 100%;
+  width: 100%;
 }
 
 app-button:last-of-type {
   margin-top: auto;
+}
+
+:host ::ng-deep button {
+  min-width: 100%;
+  min-height: 60px;
+  font-size: 2rem;
 }

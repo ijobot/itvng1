@@ -8,8 +8,8 @@ import { CombatantService } from './combatant.service';
 })
 export class FunctionService {
   public showInputModal: boolean = false;
-  public modalColor: string = 'purple';
-  public combatantType: string = 'testType';
+  public modalColor: string = '';
+  public combatantType: string = '';
 
   constructor(public combatantService: CombatantService) {}
 

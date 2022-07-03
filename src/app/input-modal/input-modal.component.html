@@ -1,15 +1,15 @@
 <div class="container" [ngStyle]="{ 'background-color': modalColor }">
   <h1 id="combatant-type">{{ functionService.combatantType }}</h1>
   <div class="flex" id="name">
-    <input type="text" placeholder="Enter Name" />
+    <input type="text" placeholder="Enter Name" #nameInput />
   </div>
 
   <div class="flex" id="score">
-    <input type="text" placeholder="Enter Score" />
+    <input type="text" placeholder="Enter Score" #scoreInput />
   </div>
 
   <div class="flex" id="ac">
-    <input type="text" placeholder="Enter AC" />
+    <input type="text" placeholder="Enter AC" #acInput />
   </div>
 
   <div class="flex" id="cancel">
@@ -18,7 +18,7 @@
       text="Cancel"
       width="max-content"
       height="auto"
-      (buttonClick)="onCloseModal()"
+      (buttonClick)="onCancelModal()"
     ></app-button>
   </div>
 
@@ -28,7 +28,7 @@
       text="Submit"
       width="auto"
       height="60px"
-      (buttonClick)="onCloseModal()"
+      (buttonClick)="onSubmitModal(nameInput, scoreInput, acInput)"
     ></app-button>
   </div>
 </div>

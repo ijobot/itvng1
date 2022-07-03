@@ -18,9 +18,20 @@ export class InputModalComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  onCloseModal(): void {
+  onCancelModal(): void {
     console.log('LOGGER: onCloseModal(), input-modal.component');
-    this.combatantService.pushCombatantData();
-    this.functionService.showInputModal = false;
+    this.functionService.closeModal();
+  }
+
+  onSubmitModal(nameInput: any, scoreInput: any, acInput: any): void {
+    console.log('hey joe', nameInput.value, scoreInput.value, acInput.value);
+    this.combatantService.createCombatant(
+      nameInput.value,
+      scoreInput.value,
+      acInput.value,
+      this.functionService.combatantType,
+      this.functionService.modalColor
+    );
+    this.functionService.closeModal();
   }
 }

@@ -31,13 +31,20 @@ export class CombatantService {
       score: score,
       color: color,
       ac: ac,
-    });
+    } as Combatant);
     this.sortCombatantList();
   }
 
   clearCombatants(): void {
     console.log('LOGGER: clearCombatants(), combatant.service');
-    this.combatantsArray = [];
+    // this.combatantsArray = [];
+    // for (let i = 0; i < this.combatantsArray.length; i++) {
+    //   this.combatantsArray.pop()
+    // }
+    this.combatantsArray.forEach(combatant => this.combatantsArray.pop())
+    this.combatantsArray.forEach(combatant => this.combatantsArray.shift())
+    this.combatantsArray.shift()
+    this.combatantsArray.pop()
     console.log(
       `LOGGER: combat list should be false: ${!!this.combatantsArray.length}`
     );

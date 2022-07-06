@@ -12,6 +12,7 @@ import { DropDownScoreComponent } from './drop-down-score/drop-down-score.compon
 import { ButtonComponent } from './button/button.component';
 import { CombatEntryComponent } from './combat-entry/combat-entry.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +24,8 @@ import { CombatEntryComponent } from './combat-entry/combat-entry.component';
     DropDownTypeComponent,
     DropDownScoreComponent,
     ButtonComponent,
-    CombatEntryComponent
+    CombatEntryComponent,
+    
   ],
   imports: [
     BrowserModule

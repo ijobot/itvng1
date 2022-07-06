@@ -1,4 +1,7 @@
-<div class="container" [ngStyle]="{ 'background-color': modalColor }">
+<div
+  class="container"
+  [ngStyle]="{ 'background-color': functionService.modalColor }"
+>
   <h1 id="combatant-type">{{ functionService.combatantType }}</h1>
   <div class="flex" id="name">
     <input type="text" placeholder="Enter Name" #nameInput />

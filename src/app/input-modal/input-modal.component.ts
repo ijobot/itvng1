@@ -10,7 +10,6 @@ import { Combatant } from '../combatant';
   styleUrls: ['./input-modal.component.css'],
 })
 export class InputModalComponent implements OnInit {
-  @Input() modalColor = this.functionService.modalColor;
   constructor(
     public functionService: FunctionService,
     public combatantService: CombatantService
@@ -24,7 +23,6 @@ export class InputModalComponent implements OnInit {
   }
 
   onSubmitModal(nameInput: any, scoreInput: any, acInput: any): void {
-    console.log('hey joe', nameInput.value, scoreInput.value, acInput.value);
     this.combatantService.createCombatant(
       nameInput.value,
       scoreInput.value,

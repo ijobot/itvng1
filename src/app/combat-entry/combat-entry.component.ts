@@ -10,7 +10,7 @@ import { Combatant } from '../combatant';
 export class CombatEntryComponent implements OnInit {
   @Input() combatant: Combatant = {
     name: '',
-    score: 10,
+    score: Math.random(),
     type: '',
     color: '',
     ac: '?',

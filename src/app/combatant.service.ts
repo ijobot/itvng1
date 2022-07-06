@@ -1,5 +1,5 @@
-import { NoopAnimationPlayer } from '@angular/animations';
-import { Injectable } from '@angular/core';
+import { Injectable, EventEmitter } from '@angular/core';
+import { Observable } from 'rxjs';
 import { Combatant } from './combatant';
 
 @Injectable({
@@ -7,6 +7,11 @@ import { Combatant } from './combatant';
 })
 export class CombatantService {
   public combatantsArray: Combatant[] = [];
+  public combatantsObservable$ = new Observable((observer) => {
+    console.log('hey joe, this is the observable');
+    const combatantsArrayForObs = this.combatantsArray;
+  });
+  public combatantCreated = new EventEmitter();
 
   constructor() {}
 
@@ -31,15 +36,13 @@ export class CombatantService {
       score: score,
       color: color,
       ac: ac,
-    });
+    } as Combatant);
+    this.combatantCreated.emit(Combatant);
     this.sortCombatantList();
   }
 
   clearCombatants(): void {
     console.log('LOGGER: clearCombatants(), combatant.service');
     this.combatantsArray = [];
-    console.log(
-      `LOGGER: combat list should be false: ${!!this.combatantsArray.length}`
-    );
   }
 }

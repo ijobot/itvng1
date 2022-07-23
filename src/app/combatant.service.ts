@@ -1,5 +1,6 @@
 import { NoopAnimationPlayer } from '@angular/animations';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { Combatant } from './combatant';
 
 @Injectable({
@@ -7,6 +8,12 @@ import { Combatant } from './combatant';
 })
 export class CombatantService {
   public combatantsArray: Combatant[] = [];
+
+  observable = new Observable(subscriber => {
+    subscriber.next(this.combatantsArray)
+  })
+
+  // ^^^^ We want this to be the observable.    public combatantsArray: Combatant[] = [];
 
   constructor() {}
 

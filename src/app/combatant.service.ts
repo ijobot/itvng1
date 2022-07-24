@@ -1,17 +1,22 @@
 import { NoopAnimationPlayer } from '@angular/animations';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { Combatant } from './combatant';
 
 @Injectable({
   providedIn: 'root',
 })
-export class CombatantService {
-  public combatantsArray: Combatant[] = [];
 
-  observable = new Observable(subscriber => {
-    subscriber.next(this.combatantsArray)
-  })
+export class CombatantService {
+  combatantsArray: Combatant[] = [];
+
+  public observable:any = of(this.combatantsArray)
+
+
+  // public observable:any = new Observable(subscriber => {
+  //   console.log('Observable has started)');
+  //   subscriber.next(this.combatantsArray)
+  // })
 
   // ^^^^ We want this to be the observable.    public combatantsArray: Combatant[] = [];
 
@@ -40,6 +45,9 @@ export class CombatantService {
       ac: ac,
     } as Combatant);
     this.sortCombatantList();
+    // console.log(this.combatantsArray)
+    console.log(this.observable.combatantsArray)
+    console.log(this.observable.next)
   }
 
   clearCombatants(): void {

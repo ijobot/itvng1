@@ -2,36 +2,48 @@
   class="container"
   [ngStyle]="{ 'background-color': functionService.modalColor }"
 >
-  <h1 id="combatant-type">{{ functionService.combatantType }}</h1>
-  <div class="flex" id="name">
-    <input type="text" placeholder="Enter Name" #nameInput />
-  </div>
+  <form
+    (ngSubmit)="onSubmitNewCombatant(combatantCreationForm)"
+    #combatantCreationForm="ngForm"
+  >
+    <h1 id="combatant-type">Create {{ functionService.combatantType }}</h1>
 
-  <div class="flex" id="score">
-    <input type="text" placeholder="Enter Score" #scoreInput />
-  </div>
+    <div class="flex" id="name">
+      <input
+        type="text"
+        placeholder="Enter Combatant Name"
+        name="combatantName"
+        ngModel
+      />
+    </div>
 
-  <div class="flex" id="ac">
-    <input type="text" placeholder="Enter AC" #acInput />
-  </div>
+    <div class="flex" id="score">
+      <input
+        type="number"
+        placeholder="Enter Initiative Score"
+        name="combatantScore"
+        ngModel
+      />
+    </div>
 
-  <div class="flex" id="cancel">
-    <app-button
-      color="grey"
-      text="Cancel"
-      width="max-content"
-      height="auto"
-      (buttonClick)="onCancelModal()"
-    ></app-button>
-  </div>
+    <div class="flex" id="cancel">
+      <app-button
+        color="grey"
+        text="Cancel"
+        width="max-content"
+        height="auto"
+        (buttonClick)="onCancelModal()"
+      ></app-button>
+    </div>
 
-  <div class="flex" id="submit">
-    <app-button
-      color="grey"
-      text="Submit"
-      width="auto"
-      height="60px"
-      (buttonClick)="onSubmitModal(nameInput, scoreInput, acInput)"
-    ></app-button>
-  </div>
+    <div class="flex" id="submit">
+      <app-button
+        color="grey"
+        text="Submit"
+        width="auto"
+        height="60px"
+        type="submit"
+      ></app-button>
+    </div>
+  </form>
 </div>

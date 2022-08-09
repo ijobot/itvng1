@@ -1,5 +1,4 @@
-import { Injectable, EventEmitter } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Injectable } from '@angular/core';
 import { Combatant } from './combatant';
 
 @Injectable({
@@ -7,11 +6,6 @@ import { Combatant } from './combatant';
 })
 export class CombatantService {
   public combatantsArray: Combatant[] = [];
-  public combatantsObservable$ = new Observable((observer) => {
-    console.log('hey joe, this is the observable');
-    const combatantsArrayForObs = this.combatantsArray;
-  });
-  public combatantCreated = new EventEmitter();
 
   constructor() {}
 
@@ -25,19 +19,12 @@ export class CombatantService {
   createCombatant(
     name: string,
     score: number,
-    ac: number,
     type: string,
     color: string
   ): void {
     console.log('LOGGER: createCombatant(), combatant.service');
-    this.combatantsArray.push({
-      name: name,
-      type: type,
-      score: score,
-      color: color,
-      ac: ac,
-    } as Combatant);
-    this.combatantCreated.emit(Combatant);
+    const newCombatant = { name, score, type, color } as Combatant;
+    this.combatantsArray.push(newCombatant);
     this.sortCombatantList();
   }
 

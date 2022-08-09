@@ -13,7 +13,6 @@ export class CombatEntryComponent implements OnInit {
     score: Math.random(),
     type: '',
     color: '',
-    ac: '?',
   };
   constructor(public combatantService: CombatantService) {}
 

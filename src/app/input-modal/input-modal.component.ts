@@ -1,8 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { FunctionService } from '../function.service';
 import { CombatantService } from '../combatant.service';
-import { Combatant } from '../combatant';
 
 @Component({
   selector: 'app-input-modal',
@@ -22,11 +21,11 @@ export class InputModalComponent implements OnInit {
     this.functionService.closeModal();
   }
 
-  onSubmitModal(nameInput: any, scoreInput: any, acInput: any): void {
+  onSubmitNewCombatant(combatantCreationForm: NgForm): void {
+    console.log('LOGGER: onSubmitModal(), input-modal.component');
     this.combatantService.createCombatant(
-      nameInput.value,
-      scoreInput.value,
-      acInput.value,
+      combatantCreationForm.value.combatantName,
+      combatantCreationForm.value.combatantScore,
       this.functionService.combatantType,
       this.functionService.modalColor
     );

@@ -1,7 +1,7 @@
 .single-entry-container {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 50px;
-  grid-template-areas: "type name ac score delete";
+  grid-template-columns: 1fr 1fr 1fr 50px;
+  grid-template-areas: "type name score delete";
   padding: 0.5rem;
   gap: 0.5rem;
 }
@@ -14,10 +14,6 @@
   grid-area: name;
 }
 
-.ac {
-  grid-area: ac;
-}
-
 .score {
   grid-area: score;
 }
@@ -28,7 +24,6 @@
 
 .type,
 .name,
-.ac,
 .score,
 .delete {
   font-size: 2rem;

@@ -5,7 +5,7 @@
   grid-template-areas:
     "type type"
     "name name"
-    "score ac"
+    "score score"
     "cancel submit";
   grid-template-columns: 50%, 50%;
   grid-gap: 1rem;
@@ -28,10 +28,6 @@
 
 #score {
   grid-area: score;
-}
-
-#ac {
-  grid-area: ac;
 }
 
 #cancel {
